@@ -1,0 +1,332 @@
+New ScopeTable with id 1 created
+
+Inserted 'x' in ScopeTable # 1
+
+Inserted 'y' in ScopeTable # 1
+
+Inserted 'z' in ScopeTable # 1
+
+Inserted 'a' in ScopeTable # 1
+
+Inserted 'func' in ScopeTable # 1
+
+New ScopeTable with id 2 created
+
+Inserted 'c' in ScopeTable # 2
+
+Inserted 'd' in ScopeTable # 2
+
+Current state of the symbol table before exiting scope 2:
+
+################################
+
+ScopeTable # 2
+0 --> < c : VARIABLE, int >
+1 --> < d : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 2 removed from the scope stack
+
+Inserted 'correct_foo' in ScopeTable # 1
+
+New ScopeTable with id 3 created
+
+Inserted 'a' in ScopeTable # 3
+
+Inserted 'b' in ScopeTable # 3
+
+Current state of the symbol table before exiting scope 3:
+
+################################
+
+ScopeTable # 3
+9 --> < a : VARIABLE, int >
+10 --> < b : VARIABLE, float >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 3 removed from the scope stack
+
+Inserted 'foo' in ScopeTable # 1
+
+New ScopeTable with id 4 created
+
+Inserted 'a' in ScopeTable # 4
+
+Current state of the symbol table before exiting scope 4:
+
+################################
+
+ScopeTable # 4
+9 --> < a : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 4 removed from the scope stack
+
+Inserted 'foo2' in ScopeTable # 1
+
+New ScopeTable with id 5 created
+
+Inserted 'a' in ScopeTable # 5
+
+At line no: 17 Duplicate symbol 'a' in ScopeTable # 5. Insertion failed.
+
+Inserted 'b' in ScopeTable # 5
+
+Current state of the symbol table before exiting scope 5:
+
+################################
+
+ScopeTable # 5
+9 --> < a : VARIABLE, int >
+10 --> < b : VARIABLE, float >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 5 removed from the scope stack
+
+Inserted 'foo3' in ScopeTable # 1
+
+New ScopeTable with id 6 created
+
+Inserted 'a' in ScopeTable # 6
+
+Inserted 'b' in ScopeTable # 6
+
+Current state of the symbol table before exiting scope 6:
+
+################################
+
+ScopeTable # 6
+9 --> < a : VARIABLE, int >
+10 --> < b : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 6 removed from the scope stack
+
+At line no: 24 Duplicate symbol 'z' in ScopeTable # 1. Insertion failed.
+
+New ScopeTable with id 7 created
+
+Inserted 'd' in ScopeTable # 7
+
+Current state of the symbol table before exiting scope 7:
+
+################################
+
+ScopeTable # 7
+1 --> < d : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 7 removed from the scope stack
+
+Inserted 'var' in ScopeTable # 1
+
+New ScopeTable with id 8 created
+
+Inserted 'a' in ScopeTable # 8
+
+Current state of the symbol table before exiting scope 8:
+
+################################
+
+ScopeTable # 8
+9 --> < a : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+4 --> < var : FUNCTION, return=int, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 8 removed from the scope stack
+
+Inserted 'foo4' in ScopeTable # 1
+
+New ScopeTable with id 9 created
+
+Inserted 'a' in ScopeTable # 9
+
+Current state of the symbol table before exiting scope 9:
+
+################################
+
+ScopeTable # 9
+9 --> < a : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+4 --> < var : FUNCTION, return=int, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) > < foo4 : FUNCTION, return=void, parameters=(int a) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 9 removed from the scope stack
+
+Inserted 'main' in ScopeTable # 1
+
+New ScopeTable with id 10 created
+
+Inserted 'a' in ScopeTable # 10
+
+Inserted 'b' in ScopeTable # 10
+
+Inserted 'c' in ScopeTable # 10
+
+Inserted 'dd' in ScopeTable # 10
+
+Inserted 'ee' in ScopeTable # 10
+
+At line no: 38 variable type can not be void
+
+Inserted 'e' in ScopeTable # 10
+
+At line no: 39 Duplicate symbol 'a' in ScopeTable # 10. Insertion failed.
+
+At line no: 39 Duplicate symbol 'c' in ScopeTable # 10. Insertion failed.
+
+At line no: 41 argument 1 type mismatch in function call: func
+
+At line no: 41 argument 2 type mismatch in function call: func
+
+At line no: 44 variable is of array type : c
+
+At line no: 44 argument 1 type mismatch in function call: correct_foo
+
+At line no: 44 argument 2 type mismatch in function call: correct_foo
+
+At line no: 45 Inconsistencies in number of arguments in function call: correct_foo
+
+At line no: 47 Undeclared variable k
+
+At line no: 48 array index is not of integer type : b
+
+At line no: 48 variable is not of array type : b
+
+At line no: 49 array index is not of integer type : c
+
+At line no: 50 array index is not of integer type : c
+
+At line no: 50 argument 1 type mismatch in function call: foo4
+
+At line no: 51 array index is not of integer type : c
+
+At line no: 52 array index is not of integer type : c
+
+At line no: 52 argument 1 type mismatch in function call: foo4
+
+At line no: 53 array index is not of integer type : c
+
+At line no: 53 array index is not of integer type : c
+
+At line no: 53 argument 1 type mismatch in function call: foo4
+
+At line no: 54 array index is not of integer type : c
+
+At line no: 58 Undeclared function: foo5
+
+Current state of the symbol table before exiting scope 10:
+
+################################
+
+ScopeTable # 10
+0 --> < c : ARRAY, int, size=4 >
+1 --> < dd : VARIABLE, int >
+2 --> < ee : VARIABLE, int > < e : VARIABLE, void >
+9 --> < a : VARIABLE, int >
+10 --> < b : VARIABLE, int >
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) > < main : FUNCTION, return=int, parameters=() >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+4 --> < var : FUNCTION, return=int, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) > < foo4 : FUNCTION, return=void, parameters=(int a) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+ScopeTable with id 10 removed from the scope stack
+
+Symbol Table
+
+################################
+
+ScopeTable # 1
+0 --> < y : VARIABLE, int > < func : FUNCTION, return=int, parameters=(int c, int d) > < main : FUNCTION, return=int, parameters=() >
+1 --> < z : VARIABLE, int > < foo : FUNCTION, return=void, parameters=(int a) >
+4 --> < var : FUNCTION, return=int, parameters=(int a) >
+6 --> < foo2 : FUNCTION, return=int, parameters=(int a, int a, float b) >
+7 --> < foo3 : FUNCTION, return=void, parameters=(int a, int b) >
+8 --> < correct_foo : FUNCTION, return=int, parameters=(int a, float b) > < foo4 : FUNCTION, return=void, parameters=(int a) >
+9 --> < a : VARIABLE, float >
+10 --> < x : VARIABLE, int >
+
+################################
+
+
+Total lines: 65
+Total errors: 25
